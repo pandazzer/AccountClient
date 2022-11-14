@@ -28,17 +28,11 @@ public class Service {
         int rCount = configFileEntity.rCount;
         int wCount = configFileEntity.wCount;
         List<Integer> idList = configFileEntity.idList;
-        int i = 0;
-        while (rCount > 0){
+        for (int i = 0; i < rCount; i++) {
             new StreamAddAmount(idList.get(i), 1111111L).start();
-            i++;
-            rCount--;
         }
-        i = 0;
-        while (wCount > 0){
+        for (int i = 0; i < wCount; i++) {
             new StreamGetAmount(i).start();
-            i++;
-            wCount--;
         }
     }
 }
